@@ -203,6 +203,12 @@ class PagerAwareViewData extends ViewData
 //        $begin = min($tmpBegin, 2);
 //        $end = $tmpEnd;
 
+        $end = min($end, $this->numPages);
+        
+        if ($end < $begin) {
+            return [];
+        }
+
         return range($begin, $end, 1);
     }
 }
