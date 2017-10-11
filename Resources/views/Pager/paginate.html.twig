@@ -6,7 +6,7 @@
     <li class="{% if 1 == pager.getCurrentPage %}active{% endif %}">
         <a href="{{ ongr_paginate_path(route, 1, parameters) }}">1</a>
     </li>
-    {% if 1 < pager.getPages.0 - 1%}
+    {% if pager.getPages|length and (1 < pager.getPages.0 - 1) %}
         <li>
             <span>...</span>
         </li>
